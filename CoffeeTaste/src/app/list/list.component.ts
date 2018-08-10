@@ -14,6 +14,10 @@ export class ListComponent implements OnInit {
     this.coffeeService.getCoffee().subscribe(data => (this.coffeeList = data));
   }
 
+  deleteCoffee(id: number) {
+    this.coffeeService.removeCoffee(id);
+  }
+
   constructor(private coffeeService: CoffeeService) {}
 
   ngOnInit() {
